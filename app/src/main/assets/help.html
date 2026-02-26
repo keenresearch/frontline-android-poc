@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>KeenASR Help</title>
+</head>
+<body>
+<p>This proof-of-concept Android app showcases the use of KeenASR SDK in three different modes:</p>
+
+<h3>Tap-to-talk</h3>
+<p>In this mode user has to tap on Start Listening button to start the recognizer. Recognizer will automatically stop after thresholds for VAD (Voice Activity Detection) are met.</p>
+
+<h3>Always-on Listening</h3>
+<p>In this mode, the app is setup to listen continuously. This is done at the application level by restarting the recognizer in the onFinalResponse callback. Note that this mode works well only when there is not much background speech.</p>
+
+<h3>Trigger Phrase</h3>
+<p>In this mode, recognizer is in always-on listening mode but the user has to say the trigger phrase ("Hey computer") for the recognizer to start providing partial and final result back to the user.</p>
+
+<h3>Phrases</h3>
+<p>The PoC app is setup to listen to the following words/phrases: <b>CANCEL, RESUME, PRINT, NEXT, PREVIOUS, HELP, STOP, START, CLEAR, HELP, DONE, BACK, PAUSE, ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, O, PICK, SKIP</b>. These commands can be updated in MainActivity getPhrases method.</p>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KeenASR-Android-PoC</string>
+    <string-array name="listening_type">
+        <item>Tap-to-talk</item>
+        <item>Always-on</item>
+        <item>Trigger Phrase</item>
+    </string-array>
+</resources>
+
+
