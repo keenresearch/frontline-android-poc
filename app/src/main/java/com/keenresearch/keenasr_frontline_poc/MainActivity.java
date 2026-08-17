@@ -113,6 +113,9 @@ public class MainActivity extends AppCompatActivity implements KASRRecognizerLis
 
     private void setupUI() {
         bluetoothStatusTextView = findViewById(R.id.bluetoothStatusTextView);
+        TextView versionTextView = findViewById(R.id.versionTextView);
+        // TODO: use KASRVersion.getVersion() once that class is public in the SDK
+        versionTextView.setText("SDK Version: 2.2");
         startButton = findViewById(R.id.startListening);
         startButton.setEnabled(false);
         appModeSpinner = findViewById(R.id.listeningTypeSpinner);
