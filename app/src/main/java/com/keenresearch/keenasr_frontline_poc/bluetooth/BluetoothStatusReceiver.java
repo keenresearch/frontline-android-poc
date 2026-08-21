@@ -15,7 +15,8 @@ import android.os.Looper;
 import android.util.Log;
 
 /**
- * Bluetooth status listener, must be registered in the manifest file
+ * Bluetooth status listener; registers its BroadcastReceiver dynamically via register(),
+ * do not declare it in the manifest (it is not a BroadcastReceiver subclass)
  */
 @SuppressLint("MissingPermission") // BLUETOOTH_CONNECT permission is declared in manifest; runtime check not required for minSdk 27
 public class BluetoothStatusReceiver {
@@ -39,7 +40,7 @@ public class BluetoothStatusReceiver {
 
     }
 
-    public void startListening() {
+    public void register() {
         startListeningForBluetoothChanges();
         if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
             checkForConnectionUponStart();
@@ -72,7 +73,7 @@ public class BluetoothStatusReceiver {
         context.registerReceiver(receiver, filter);
     }
 
-    public void stopListening() {
+    public void unregister() {
         context.unregisterReceiver(receiver);
     }
 

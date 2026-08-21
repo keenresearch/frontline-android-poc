@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements KASRRecognizerLis
 
     private void setupBluetooth() {
         bluetoothStatusReceiver = new BluetoothStatusReceiver(this, this);
-        bluetoothStatusReceiver.startListening();
+        bluetoothStatusReceiver.register();
     }
 
     private void setupUI() {
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements KASRRecognizerLis
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        bluetoothStatusReceiver.stopListening();
+        bluetoothStatusReceiver.unregister();
         if (executorService != null) {
             executorService.shutdown();
         }
